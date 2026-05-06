@@ -1,17 +1,12 @@
 "use client";
-import React, { useState } from 'react';
-import { Loader2, ChevronDown } from 'lucide-react';
-import Link from 'next/link';
-import useFetch from '../hooks/useFetch';
-;
-
-
-
+import React, { useState } from "react";
+import { Loader2, ChevronDown } from "lucide-react";
+import Link from "next/link";
+import useFetch from "../hooks/useFetch";
 const SurahList = () => {
-  // ডাটা ফেচ করা হচ্ছে
-  const { data: surahs, loading, error } = useFetch('/api/surahs');
-  
-  // কতগুলো সুরা দেখানো হবে তার জন্য স্টেট (প্রাথমিকভাবে ২০টি)
+  const { data: surahs, loading, error } = useFetch("/api/surahs");
+
+  //  deffold 20 shura load
   const [visibleCount, setVisibleCount] = useState(20);
 
   if (loading) {
@@ -23,22 +18,24 @@ const SurahList = () => {
   }
 
   if (error) {
-    return <div className="text-center text-red-500 py-10">Failed to load surahs.</div>;
+    return (
+      <div className="text-center text-red-500 py-10">
+        Failed to load surahs.
+      </div>
+    );
   }
 
-  // "See More" বাটনে ক্লিক করলে সব সুরা দেখানোর ফাংশন
+  // see more button click all shura
   const handleSeeMore = () => {
-    setVisibleCount(surahs.length); // সব সুরা সেট করে দিবে
+    setVisibleCount(surahs.length);
   };
 
   return (
-    <div className="max-w-[1200px] mx-auto px-4 py-8 bg-white">
-      {/* Grid Layout - slice() ব্যবহার করে লিমিটেড ডাটা দেখানো হচ্ছে */}
+    <div className="max-w-6xl mx-auto px-4 py-8 bg-white">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {surahs?.slice(0, visibleCount).map((surah) => (
           <Link href={`/surah/${surah.id}`} key={surah.id}>
             <div className="flex items-center justify-between p-4 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md hover:border-green-100 transition-all cursor-pointer group h-full">
-              {/* Left Side: Number and Names */}
               <div className="flex items-center space-x-4">
                 <div className="relative w-10 h-10 flex items-center justify-center">
                   <div className="absolute inset-0 bg-gray-50 rotate-45 rounded-lg border border-gray-100 group-hover:bg-green-50 group-hover:border-green-200 transition-colors"></div>
@@ -57,7 +54,7 @@ const SurahList = () => {
                 </div>
               </div>
 
-              {/* Right Side: Arabic Name */}
+              {/* arabic name */}
               <div className="text-right">
                 <p className="text-xl font-arabic text-gray-700 group-hover:text-green-700 transition-colors">
                   {surah.name}
@@ -68,7 +65,7 @@ const SurahList = () => {
         ))}
       </div>
 
-      {/* See More Button - শুধুমাত্র তখনই দেখাবে যখন আরও সুরা বাকি থাকবে */}
+      {/* See More Button */}
       {surahs && visibleCount < surahs.length && (
         <div className="mt-12 flex justify-center">
           <button

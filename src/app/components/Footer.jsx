@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="bg-white border-t border-gray-100 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          {/* Column 1: About & Mission */}
+       
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <Image
@@ -29,7 +29,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Column 2: Other Pages */}
+        
           <div>
             <h4 className="font-bold text-gray-800 mb-6">Other Pages</h4>
             <ul className="space-y-4 text-sm text-gray-500">
@@ -52,7 +52,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Our Projects */}
+      
           <div>
             <h4 className="font-bold text-gray-800 mb-6">Our Projects</h4>
             <ul className="space-y-4 text-sm text-gray-500">
@@ -83,7 +83,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Important Links & Social */}
+        
           <div>
             <h4 className="font-bold text-gray-800 mb-6">Important Links</h4>
             <ul className="space-y-4 text-sm text-gray-500 mb-8">
@@ -133,7 +133,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+  
         <div className="border-t border-gray-50 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
           <p>© 2026 All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
