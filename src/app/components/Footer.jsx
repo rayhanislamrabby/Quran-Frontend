@@ -135,9 +135,13 @@ const Footer = () => {
 
   
         <div className="border-t border-gray-50 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-          <p>© 2026 All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <span>Developed by IRD Team</span>
+          <p> 2026 All rights reserved.</p>
+          <div className="flex space-x-6  mt-4 md:mt-0">
+            <span>Developed by :
+
+<Link href="https://github.com/rayhanislamrabby" className="text-green-500 mr-0.5">Rabby </Link>
+
+            </span>
             <Link href="#" className="hover:text-green-600">
               Terms of Service
             </Link>

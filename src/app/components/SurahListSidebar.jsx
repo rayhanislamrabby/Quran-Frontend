@@ -19,9 +19,7 @@ const SurahListSidebar = ({ activeId }) => {
           <button className="flex-1 py-2 text-xs font-bold bg-white rounded-lg shadow-sm">
             Surah
           </button>
-          <button className="flex-1 py-2 text-xs font-bold text-gray-400">
-            Juz
-          </button>
+       
         </div>
         <div className="relative">
           <Search

@@ -26,7 +26,7 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center space-x-4">
-        <button className="flex items-center bg-[#2e7d32] text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-green-800 transition shadow-md">
+        <button className="flex items-center bg-green-500 text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-green-800 transition shadow-md">
           Support Us <Heart size={16} className="ml-2 fill-white" />
         </button>
       </div>

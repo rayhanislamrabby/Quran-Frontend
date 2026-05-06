@@ -6,7 +6,7 @@ const useFetch = (endpoint) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const baseURL = "http://localhost:5000";
+  const baseURL = "https://quran-server-rust.vercel.app";
 
   useEffect(() => {
     const fetchData = async () => {
