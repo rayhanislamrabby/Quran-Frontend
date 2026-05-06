@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { Search, Loader2, X, BookOpen } from "lucide-react";
+import Link from "next/link"; 
 import useFetch from "../hooks/useFetch";
 
 const QuranSearch = () => {
@@ -105,34 +106,38 @@ const QuranSearch = () => {
                 </div>
 
                 {filteredSurahs.map((surah) => (
-                  <div
-                    key={surah.id}
-                    className="flex items-center justify-between px-6 py-4 hover:bg-green-50/60 cursor-pointer transition-all border-b border-gray-50 last:border-none group"
+               
+                  <Link 
+                    key={surah.id} 
+                    href={`/surah/${surah.id}`}
+                    onClick={() => setIsOpen(false)} 
                   >
-                    <div className="flex items-center space-x-5">
-                      <div className="w-10 h-10 flex items-center justify-center bg-gray-50 text-gray-500 rounded-xl text-sm font-bold group-hover:bg-green-600 group-hover:text-white transition-all">
-                        {surah.id}
+                    <div className="flex items-center justify-between px-6 py-4 hover:bg-green-50/60 cursor-pointer transition-all border-b border-gray-50 last:border-none group">
+                      <div className="flex items-center space-x-5">
+                        <div className="w-10 h-10 flex items-center justify-center bg-gray-50 text-gray-500 rounded-xl text-sm font-bold group-hover:bg-green-600 group-hover:text-white transition-all">
+                          {surah.id}
+                        </div>
+
+                        <div>
+                          <h3 className="text-md font-bold text-gray-800 group-hover:text-green-700 transition-colors">
+                            {surah.transliteration}
+                          </h3>
+                          <p className="text-xs text-gray-500 font-medium italic">
+                            {surah.translation}
+                          </p>
+                        </div>
                       </div>
 
-                      <div>
-                        <h3 className="text-md font-bold text-gray-800 group-hover:text-green-700 transition-colors">
-                          {surah.transliteration}
-                        </h3>
-                        <p className="text-xs text-gray-500 font-medium italic">
-                          {surah.translation}
+                      <div className="text-right">
+                        <p className="text-2xl font-serif text-gray-800 mb-1 leading-relaxed">
+                          {surah.name}
                         </p>
+                        <span className="text-[10px] text-gray-400 font-bold uppercase">
+                          {surah.total_verses || surah.ayahs?.length} Ayahs
+                        </span>
                       </div>
                     </div>
-
-                    <div className="text-right">
-                      <p className="text-2xl font-serif text-gray-800 mb-1 leading-relaxed">
-                        {surah.name}
-                      </p>
-                      <span className="text-[10px] text-gray-400 font-bold uppercase">
-                        {surah.total_verses} Ayahs
-                      </span>
-                    </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             ) : (
