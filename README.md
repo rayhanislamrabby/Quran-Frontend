@@ -1,8 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+Quran Mazid - Islamic Reading & Audio Platform
+A modern, high-performance web application for reading and listening to the Holy Quran. Built with a focus on user experience, it features real-time audio synchronization and a clean, distraction-free interface.
+
+🚀 Key Features
+Dynamic Surah Sidebar: Quickly navigate through Surahs with a real-time search filter.
+
+Active Ayah Highlighting: The current Ayah being read or played is visually highlighted with smooth transitions.
+
+Auto-Scroll Technology: The page automatically scrolls to the active Ayah during audio playback.
+
+Integrated Audio Player: Professional-grade player with play/pause, skip, and auto-play next Ayah functionality.
+
+Responsive Design: Optimized for all devices using Tailwind CSS.
+
+Modern Navigation: Includes a sticky Navbar for quick settings and a comprehensive Footer for organizational information.
+
+💻 Tech Stack
+Client (Frontend)
+Framework: Next.js (App Router)
+
+Language: JavaScript / React
+
+Styling: Tailwind CSS
+
+Icons: Lucide React
+
+Data Fetching: Custom useFetch hook with Axios/Fetch
+
+
 
 ```bash
 npm run dev
