@@ -15,6 +15,8 @@ Integrated Audio Player: Professional-grade player with play/pause, skip, and au
 Responsive Design: Optimized for all devices using Tailwind CSS.
 
 Modern Navigation: Includes a sticky Navbar for quick settings and a comprehensive Footer for organizational information.
+Live link : https://quran-client-pi.vercel.app
+Backend : https://github.com/rayhanislamrabby/Quran-backend
 
 💻 Tech Stack
 Client (Frontend)
