@@ -48,7 +48,17 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+
+
+
+feat: enhance user experience and finalize project documentation
+
+- Integrated Next.js Link in QuranSearch for dynamic navigation.
+- Fixed search result click handler to redirect to specific Surah pages.
+- Added detailed README.md for both Client and Backend with installation guides.
+- Optimized UI for mobile and desktop consistency.
+
+
 
 To learn more about Next.js, take a look at the following resources:
 
