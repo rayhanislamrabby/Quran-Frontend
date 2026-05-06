@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Search, Loader2, X, BookOpen } from "lucide-react";
 import useFetch from "../hooks/useFetch";
 
+
 const QuranSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredSurahs, setFilteredSurahs] = useState([]);

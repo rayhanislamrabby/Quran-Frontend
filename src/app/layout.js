@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import "./globals.css";
 
 export const metadata = {
@@ -10,6 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className="antialiased">
         {children}
+        <Footer />
       </body>
     </html>
   );
