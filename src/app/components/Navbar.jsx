@@ -1,74 +1,53 @@
 "use client";
-import { useState, useEffect } from "react";
-import { Search, Sun, Moon, Settings, Menu } from "lucide-react";
+import React from "react";
+import Link from "next/link";
+import { Sun, Heart,  } from "lucide-react";
+import Image from "next/image";
 
-export default function Navbar({ onSearch, onOpenSettings, onOpenMenu }) {
-  const [mounted, setMounted] = useState(false);
-  const [dark, setDark] = useState(true);
-
-  // Initial Load from LocalStorage
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setDark(savedTheme === "dark");
-    }
-    setMounted(true);
-  }, []);
-
-  // Update Theme & Save to LocalStorage
-  useEffect(() => {
-    if (mounted) {
-      if (dark) {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-      }
-    }
-  }, [dark, mounted]);
-
-  if (!mounted) return <div className="h-16" />; // Prevent Hydration mismatch
-
+const Navbar = () => {
   return (
-    <nav className="h-16 border-b dark:border-gray-800 border-gray-200 dark:bg-[#0f172a]/80 bg-white/80 backdrop-blur-md flex items-center justify-between px-4 sticky top-0 z-50">
-      <div className="flex items-center gap-2">
-        <button onClick={onOpenMenu} className="md:hidden p-2 dark:text-white text-gray-800">
-          <Menu size={20} />
-        </button>
-        <div className="flex items-center gap-2">
-          <div className="bg-green-600 p-1.5 rounded-lg text-white font-bold">QM</div>
-          <span className="text-xl font-black dark:text-white text-gray-900 hidden sm:block uppercase italic">
-            Quran<span className="text-green-500">Mazid</span>
-          </span>
+    <nav className="flex items-center justify-between px-6 py-3 bg-[#f3f6f2] shadow-sm border-b border-gray-200">
+      <div className="flex items-center space-x-3">
+        <div className="bg-[#2e7d32] p-2 rounded-lg">
+          <Image
+            src="/quran-icon.png"
+            alt="Logo"
+            height={100}
+            width={100}
+            className="w-6 h-6 invert"
+          />
+        </div>
+        <div>
+          <h1 className="text-xl font-bold text-gray-800 leading-tight">
+            Quran Mazid
+          </h1>
+          <p className="text-[10px] text-gray-500 uppercase tracking-tighter">
+            Read, Study, and Learn The Quran
+          </p>
         </div>
       </div>
 
-      {/* Responsive Search Bar */}
-      <div className="hidden md:flex items-center bg-gray-100 dark:bg-gray-800/50 border dark:border-gray-700 border-gray-200 rounded-full px-4 py-1.5 w-1/3 focus-within:ring-1 focus-within:ring-green-500">
-        <Search size={16} className="text-gray-500" />
-        <input 
-          type="text" 
-          placeholder="What do you want to read? (Ctrl+K)" 
-          onChange={(e) => onSearch(e.target.value)}
-          className="bg-transparent border-none outline-none text-sm px-3 w-full placeholder:text-gray-500 dark:text-white"
-        />
+      <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+        <Link href="/" className="hover:text-green-700 transition">
+          Home
+        </Link>
+        <Link href="/read" className="hover:text-green-700 transition">
+          Read Quran
+        </Link>
       </div>
 
-      <div className="flex items-center gap-2">
-        <button 
-          onClick={() => setDark(!dark)}
-          className="p-2 rounded-full dark:bg-gray-800 bg-gray-100 dark:text-green-500 text-gray-600 hover:scale-110 transition-all"
-        >
-          {dark ? <Sun size={20} /> : <Moon size={20} />}
+     
+      <div className="flex items-center space-x-4">
+        <button className="p-2 bg-white rounded-full shadow-sm hover:bg-gray-100 transition">
+          <Sun size={20} className="text-gray-600" />
         </button>
-        <button 
-          onClick={onOpenSettings}
-          className="p-2 rounded-full dark:bg-gray-800 bg-gray-100 dark:text-green-500 text-gray-600 hover:scale-110 transition-all"
-        >
-          <Settings size={20} />
+
+        <button className="flex items-center bg-[#2e7d32] text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-green-800 transition shadow-md">
+          Support Us <Heart size={16} className="ml-2 fill-white" />
         </button>
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar;
