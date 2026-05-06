@@ -9,17 +9,23 @@ const Navbar = () => {
     <nav className="flex items-center justify-between px-6 py-3 bg-[#f3f6f2] shadow-sm border-b border-gray-200">
       <div className="flex items-center space-x-3">
         <div className="relative w-14 h-12">
-          <Image
+       
+<Link href="/">
+
+   <Image
             src="/navlogo.jpg"
             alt="Logo"
             fill
             className="object-cover rounded-xl"
             priority
           />
+
+</Link>
+
         </div>
       </div>
 
-      <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+      <div className=" md:flex items-center space-x-8 text-sm font-medium text-gray-600">
         <Link href="/" className="hover:text-green-700 transition">
           Home
         </Link>
